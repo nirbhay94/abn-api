@@ -119,3 +119,8 @@ Route::group(['middleware' => ['auth.jwt']], function ($CRUD) {
         });
     }
 });
+
+Route::group(['namespace' => 'Api'], function () {
+    Route::post('contact-us','ContactUsController@sendMail');
+    Route::resource('products','ProductController');
+});
